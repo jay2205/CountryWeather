@@ -1,14 +1,7 @@
 /* @flow */
 
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  Button,
-  SafeAreaView,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import CountriesList from './CountriesList';
 
@@ -25,9 +18,9 @@ export default function HomeScreen({navigation}) {
     setCountriesList(list);
   };
 
-  const onPressItem = item => {
-    navigation.navigate('Details', item);
-  };
+  function onPressItem(item) {
+    navigation.navigate('Country Details', item);
+  }
 
   async function fetchCountriesWith(url) {
     const jsonData = await fetch(url);
@@ -71,16 +64,11 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.white,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '800',
     color: Colors.black,
     padding: 10,
-    marginTop: 30,
     textAlign: 'center',
   },
 });

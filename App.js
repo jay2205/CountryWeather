@@ -6,8 +6,9 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React from 'react';
 import HomeScreen from './Components/HomeScreen';
+import DetailScreen from './Components/DetailsScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -17,8 +18,8 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" Component={HomeScreen} />
-        <Stack.Screen name="Details" Component={DetailScreen} />
+        <Stack.Screen name="Search Country" component={HomeScreen} />
+        <Stack.Screen name="Country Details" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
